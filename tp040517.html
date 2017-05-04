@@ -5,8 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>TP040517</title>
+<style type="text/css">
+div {background-color:red; width:100px; height:100px; position:absolute;}
+body {height:100vh;}
+</style>
 </head>
 <body>
-    <p style="background.color:red; width:100px; height:100px;"></p>
+    <div id="carre"></div>
+    <script>
+        let body=document.body;
+        let carre=document.querySelector("#carre");
+        body.addEventListener("mousemove", function(depl){
+            let x=depl.clientX;
+            let y=depl.clientY;
+            console.log("Position x:"+x+"px et Position y:"+y+"px");
+            carre.style.left= x + "px";
+            carre.style.top= y + "px";
+        });
+    </script>
 </body>
 </html>
